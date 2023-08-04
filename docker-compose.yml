@@ -12,7 +12,7 @@ services:
       - "9000:4200"
     entrypoint:
       - /bin/sh 
-      - /usr/src/app/startup.sh
+      - /usr/src/app/angular/startup.sh
     networks:
       asgnet:
         ipv4_address: 172.10.3.4
