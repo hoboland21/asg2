@@ -1,0 +1,6 @@
+node_modules
+.pyc
+migrations
+__pycache__
+project-data/django/webapps/media/*
+appenv.ts

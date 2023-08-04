@@ -1,0 +1,78 @@
+version: '3'
+
+services:
+#-------------------------------------
+  mysql:
+    build:
+      context: mysql
+    volumes:
+      - asg-django-db:/var/lib/mysql
+      - ./project-data:/usr/src/app/
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: mariadb
+    networks:
+      asgnet:
+        ipv4_address: 172.10.2.2
+#-------------------------------------
+  django:
+    build:
+      context: django 
+    volumes:
+      - ./project-data:/usr/src/app/
+    ports:
+      - "4200:4200"
+    depends_on:
+      - mysql
+    entrypoint:
+      - /bin/sh
+      - /usr/src/app/django/startup.sh
+    networks:
+      asgnet:
+        ipv4_address: 172.10.2.3
+#-------------------------------------
+  angular:
+    build:
+      context: angular
+    volumes:
+      - ./project-data:/usr/src/app/
+      - node_modules:/usr/src/app/angular/asg/node_modules
+    ports:
+      - "9000:4200"
+    entrypoint:
+      - /bin/sh 
+      - /usr/src/app/angular/startup.sh
+    networks:
+      asgnet:
+        ipv4_address: 172.10.2.4
+
+#-------------------------------------
+#  nginx:
+#    build:
+#      context: nginx
+#    volumes:
+#      - ./project-data:/usr/src/app/
+#    ports:
+#      - "80:80"
+#    depends_on:
+#      - django
+#    networks:
+#      asgnet:
+
+
+#        ipv4_address: 172.10.2.5
+
+#-------------------------------------
+
+volumes:
+  asg-django-db:
+    external: true
+  node_modules:     
+    external: true
+networks:
+  asgnet:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.10.2.0/24
