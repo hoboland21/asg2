@@ -6,7 +6,7 @@ services:
     build:
       context: angular
     volumes:
-      - ./project-data:/usr/src/app/
+      - ./project_data:/usr/src/app/
       - node_modules:/usr/src/app/angular/asg2/node_modules
     ports:
       - "9000:4200"
