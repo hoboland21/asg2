@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:20
 
 WORKDIR /usr/src/app/angular
 RUN apk update  && \
