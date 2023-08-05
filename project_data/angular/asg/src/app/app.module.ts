@@ -25,8 +25,8 @@ import { MatrixComponent } from './tcview/matrix/matrix.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GaugeModule } from 'angular-gauge';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from "@angular/material/button";
 
+import { MatButtonModule } from "@angular/material/button" ;
 
 
 
@@ -59,7 +59,6 @@ import { MatButtonModule } from "@angular/material/button";
 
     BrowserAnimationsModule,
     MatButtonModule
-    
   ],
   providers: [authInterceptorProviders, AppEnv],
   bootstrap: [AppComponent]
