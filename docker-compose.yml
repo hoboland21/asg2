@@ -7,7 +7,7 @@ services:
       context: angular
     volumes:
       - ./project_data:/usr/src/app/
-      - node_modules:/usr/src/app/angular/asg2/node_modules
+
     ports:
       - "9000:4200"
     entrypoint:
@@ -19,9 +19,6 @@ services:
 
 #-------------------------------------
 
-volumes:
-  node_modules:     
-    external: true
 networks:
   asgnet:
     ipam:
