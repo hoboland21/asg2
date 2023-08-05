@@ -1,0 +1,94 @@
+
+<!-- We list out the envirnments here
+
+<div class="card">
+    <div class="card-header"></div>
+    <div class="card-body"></div>    <div class="card-footer"></div>
+</div
+-->
+
+
+<div class="row">
+    <div class="col-md-5">
+
+
+        <div class="card">
+            <div style="text-align:center" class="card-header">
+                <div class="flex-con">
+                    <div style="width:60%">Tomcat Status and Selection Matrix</div>  
+                    <div><img *ngIf="!refreshing" src='/assets/refresh.png' (click)="refreshCmd()" style="width:20px;cursor:pointer"></div>            
+                    <div class="tgl" style="width:20%"> 
+                        <span (click)="autoRefreshOff()" *ngIf='autoRefresh'  style="cursor:pointer;background-color:navajowhite">Refresh: Auto </span>
+                        <span  (click)="autoRefreshOn()" *ngIf='!autoRefresh' style="cursor:pointer">Refresh: Manual</span>
+                    </div> 
+                </div>
+            </div>
+        
+            <div class="card-body">
+                <app-matrix [flag]='refreshFlag' (emitMtx)='mtxEmit($event)'></app-matrix>
+            </div>
+        </div>        
+ <!--
+
+       <app-nrelic [flag]='refreshFlag'></app-nrelic>
+ 
+ -->
+    
+    </div>
+    <div class="col-md-3">
+
+        <!--  --------------------   -->
+        <div *ngIf='actionCode'>
+            <div class="card">
+                <div class="card-header {{actionCode.action}}" >Please confirm {{ actionCode.action }} {{ actionCode.name }} </div>
+                <div class="card-body">
+                    <div class="flex-con">
+                        <div style="width:25%"><button  class="btn-outline-dark btn btn-primary"  (click)='actionConfirm(actionCode)'>Ok</button></div>
+                        <div style="width:35%"><button  class="btn-outline-dark btn btn-warning"  (click)='actionCancel()'>Cancel</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  --------------------   -->
+        <div  *ngIf='selected == "TC"'>
+            <app-tcaction 
+                [refreshApps] = 'refreshFlag'
+                [env]='now_env' 
+                [curr_tc]='curr_tc'
+                (actionKey)='actionSelector($event)'>
+            </app-tcaction>
+        </div>
+        <!--  --------------------   -->
+        <div  *ngIf='selected == "Env"'>
+            <app-envaction 
+                [curr_env]='curr_env'
+                (actionKey)='actionSelector($event)'>
+            </app-envaction>
+        </div>
+        <!--  --------------------   -->
+
+
+    </div>
+
+    <!--  --------------------   -->
+    <!--  --------------------   -->
+
+    <div class="col-md-4">
+   <app-appsearch></app-appsearch>
+   <app-message [newItem]='newItem'></app-message>
+    </div>
+</div>
+   
+    <!--  --------------------   -->
+
+    <div class="row">
+        <div class='col-md-8'>
+            <div *ngIf='config_switch'>
+                <app-config></app-config>
+            </div>
+        </div>    
+        <div class="col-md-4"></div>
+    </div>
+
+
+

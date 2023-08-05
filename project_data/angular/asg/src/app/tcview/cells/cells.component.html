@@ -1,0 +1,28 @@
+<div class='flex-con'>
+    <div >
+        <button [disabled]="app.status == 'running' "
+            class='btn btn-outline-success btn-sm '
+            (click)='selectStart(app)'
+            title="Start {{ app.name }}" >
+            Start   
+        </button>
+    </div>
+
+    <div >
+        
+        <button 
+            class='btn btn-outline-danger btn-sm  ml-3'
+            (click)='selectStop(app)'
+            title="Stop {{ app.name }}" >
+            Stop   
+        </button>
+    </div>
+    <div  class="{{app.status}}" style="font-family:Nova; font-size:8pt; margin: 0 5px">
+    {{ app.status }}
+    </div>
+
+    <div  style="margin-left:4px">
+
+        <a href="http://{{address}}/{{app.name}}" target="_blank">{{ app.name }} </a>
+    </div>
+</div>

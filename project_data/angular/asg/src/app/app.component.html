@@ -1,0 +1,34 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-light bg-light">
+    <img routerLink="desktop" src="assets/moda-logo.png" alt="MODA Logo" style="height: 40px">
+    <span class="ml-5">Application Engineering Tomcat Control</span>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn" >
+      <li class="nav-item" >
+       <a href="login" class="nav-link" routerLink="login">Login</a>
+     </li>
+   </ul>
+   
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+
+      <li style="margin:0 1em" class="nav-item" >
+        <h5>{{ username }} </h5>
+      </li>
+      <li *ngIf="username=='clarkj' || username=='thompsr'">
+        <button button mat-raised-button  *ngIf="!request_init" (click)="request_init=true" >Init DB</button>
+        <div *ngIf="request_init"> 
+            <button class="btn btn-warning"(click)='request_init=false; initdb()' >Really Initialize the DB?</button>
+            <button class="btn btn-success"(click)='request_init=false' >Cancel</button>
+        </div>
+      </li>
+
+
+      <li style="margin:0 1em"  class="nav-item" *ngIf="isLoggedIn">
+        <button button mat-raised-button   (click)="logout()">LogOut</button>
+      </li>
+    </ul>
+  </nav>
+  <div class="fluid-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

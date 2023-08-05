@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: OpenSans;
+    src: url("/assets/fonts/OpenSans-Regular.ttf"); }
+
+  @font-face {
+    font-family: Copper;
+    src: url("/assets/fonts/COPRGTB.TTF"); }
+    
+  @font-face {
+    font-family: Quicksand;
+    src: url("/assets/fonts/Quicksand-Regular.otf"); }
+
+  @font-face {
+    font-family: Nova;
+    src: url("/assets/fonts/Novecentosanswide-Normal.ttf"); }
+        
+    .bt {
+        padding:3px;
+    }
+    
+    .menubox {
+        padding:2em;
+        background-color:rgba(255, 255, 255, 0.6);
+        border:2px solid rgb(190, 190, 190);
+        border-radius:15px;
+        margin:1em;
+      }
+    
+    .flex-con {
+      display:flex;
+      flex-wrap:wrap;
+      flex-direction:row;
+      align-items:align-center;
+    }
+    .card-body {
+        background-color:rgb(231, 247, 239);
+    }
+    .card {
+      margin-top:.5em;
+      border-radius:8px;
+    } 
+    .fluid-container {
+      width:96%;
+      margin:auto;
+    }
+    .warning {
+      background-color:teal;
+    }
+    
+    .card-header span {
+      font-family:Nova;
+      font: weight 600;
+      color:black;
+   } 
+
+mwl-gauge {
+    width: 150px;
+    height: 150px;
+    display: block;
+    padding: 10px;
+}
+  mwl-gauge > .gauge > .dial {
+    stroke: silver;
+    stroke-width: 10;
+    fill: rgba(0, 0, 0, 0);
+  }
+  mwl-gauge > .gauge > .value {
+    stroke: white;
+    stroke-width: 10;
+    fill: rgba(0, 0, 0, 0);
+  }
+  mwl-gauge > .gauge > .value-text {
+    fill: navajoWhite;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+  }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

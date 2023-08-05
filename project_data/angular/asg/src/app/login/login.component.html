@@ -1,0 +1,38 @@
+
+<div>
+    <div class="card" style="margin:200px auto; width:400px; border:1px solid green;background-color:inherit" >
+      <div class="card-header" style="text-align:center" >
+        <img routerLink="home" src="assets/moda-logo.png" alt="Moda Logo" style="height: 40px">
+        <br>
+        <span class="ml-5">Application Engineering Tomcat Control</span>
+      </div>
+      <div class="card-body">
+
+        <form [formGroup] = "formdata" (ngSubmit) = "onSubmit(formdata.value)" >
+          <input type = "text" class = "form-control" name = "username" placeholder = "username" 
+            formControlName="username">
+          <br/>
+          
+          <input type = "password" class = "form-control" name="password" 
+            placeholder = "password" formControlName = "password">
+          <br/>
+          
+          <input type = "submit" class = "form-control" value = "Log In">
+    
+        </form>
+      
+  
+
+      </div>
+    
+   
+    
+    </div>
+    
+
+     
+ 
+ 
+
+  </div>
+  

@@ -1,0 +1,22 @@
+
+
+
+.START {
+    background-color:green;
+    color:white;
+}
+
+.KILL {
+    background-color:black;
+    color:white;
+}
+.STOP {
+    background-color:red;
+    color:yellow;
+}
+
+.tgl span {
+    font-size:9pt;
+}
+
+

@@ -1,0 +1,15 @@
+<div class='flex-con'> 
+
+   <div class="env_cell">
+         <button class='grid' style="background-color:{{ env.color}}" (click)="selectEnv(env)">{{ env.name }}</button> 
+    </div>
+
+    <div class="tc_cell" *ngFor="let t of tcList ">
+        <button class='grid' style="border: 3px solid {{ t.color }}; background-color:{{ t.color}}"  
+                             [ngStyle]="{  'border': curr_tc.id === t.id ? '3px solid cyan': '3px solid t.color'}"
+             (click)="selectTC(t)">{{ t.name }} </button>
+         
+    </div>
+
+</div>
+

@@ -1,0 +1,58 @@
+
+<div class="card">
+
+    <div class="card-header"> 
+        <div style="text-align:center">Instance  {{ curr_tc.name}} on {{ env.name }} </div>
+        <div style="text-align:center">Log Size - {{ logsize }} </div>
+        <hr style="padding:1px;margin:3px">
+        <div class='flex-con'>
+            <div style="width:33%;text-align:center">
+                <button [disabled]="apps.length"
+                    class='btn btn-outline-success btn-sm'
+                    (click)='selectStart(curr_tc)'
+                    title="Start {{ curr_tc.name }}">
+                Start   
+                </button>
+            </div>
+            <div style="width:33%;text-align:center">
+                <button
+                    class='btn btn-outline-danger btn-sm'
+                    (click)='selectStop(curr_tc)'             
+                    title="Stop - {{ curr_tc.name }}">
+                Stop
+                </button>
+            </div>
+            <div style="width:33%;text-align:center">
+                <button
+                    class='btn btn-outline-dark btn-sm'
+                    (click)='selectKill(curr_tc)'
+                    title="Kill - {{ curr_tc.name }}">
+                    Kill
+                </button>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="card-body" style="padding:2px">   
+
+        <div *ngFor='let a of apps' style="padding:3px" >
+            
+            <app-cells  
+                [app]='a' 
+                [env]='env' 
+                [tc]='curr_tc' 
+                (actionKey)='newAction($event)' > 
+            </app-cells>
+        </div>
+     </div>
+
+     <div class="card-footer" style="padding:2px">   
+    <app-config [env]='env' [tc]='curr_tc'></app-config>
+    </div>
+
+</div>
+

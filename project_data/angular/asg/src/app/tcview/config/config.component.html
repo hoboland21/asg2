@@ -1,0 +1,14 @@
+  <p style="text-align:center"><strong>Downloads</strong></p>
+  <p>Download  files from {{ env.name }} - {{ tc.name }}</p>
+    <div>
+        <button (click)= "getConfig('server.xml')" class="btn btn-outline-dark btn-sm">server.xml</button>  
+        <button (click)= "getConfig('context.xml')"   class="btn btn-outline-dark btn-sm">context.xml  </button>
+        <button (click)= "getConfig('setenv.sh')"   class="btn btn-outline-dark btn-sm">setenv.sh  </button>
+        <button (click)= "getConfig('uriworkermap.properties')"   class="btn btn-outline-dark btn-sm">uriworkermap.properties</button>
+        <button (click)= "getStatus()"   class="btn btn-outline-dark btn-sm">Server Status</button>
+        <button (click)= "getConfig('stack.txt')"   class="btn btn-outline-dark btn-sm">Stack Trace</button>
+
+      <span *ngIf="config">{{ config.data }}</span>  
+    </div>
+
+            

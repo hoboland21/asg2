@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-header" style="text-align:center"> Environment {{ curr_env.name }} </div>
+    <div class="card-body">
+        <div class='flex-con'>
+
+
+            <div style="width:50%;text-align:center">
+
+
+                <button class='btn btn-outline-success' (click)='selectStart(curr_env)'
+                    title="Start {{ curr_env.name }}">
+                    Start
+                </button>
+
+
+            </div>
+            <div style="width:50%;text-align:center">
+
+                <button class='btn btn-outline-danger ' (click)='selectStop(curr_env)' title="Stop {{ curr_env.name }}">
+                    STOP
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="card-footer">
+       <div *ngIf="loglist">
+            <div>
+                <div style="text-align:center">Log Directory Sizes</div>
+                <hr>
+                <div class="flex-con" *ngFor="let log of loglist.logsize">
+                    <div style="width:30%;text-align:center">{{log[0]}} {{log[2]}} </div>  <div style="width:60%; text-align:right">{{ log[1]  | number: '2.' }}K</div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="instinfo">
+            <div>
+                <div style="text-align:center">Instana View</div>
+                <hr>
+                <h4>Environment level API Info here</h4>
+            </div>
+        </div>
+    </div>
+</div>

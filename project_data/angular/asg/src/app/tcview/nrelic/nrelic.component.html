@@ -1,0 +1,25 @@
+
+
+<div class="card">
+    <div style="text-align:center" class="card-header">
+        <span>New Relic Alerts</span>
+    </div>
+ 
+    <div style="max-height:400px;overflow-y:auto" class="card-body">
+        <div style="border-bottom:1px solid green" *ngFor="let l of NRList">
+            <div class="flex-con" style="border-bottom:1px solid lightgrey">
+                <div style="width:20%" *ngIf="!l.closed_at" style="color:red"><strong>ALERT ACTIVE</strong></div>
+                <div style="width:20%">For {{ l.duration}} seconds</div>
+                <div style="width:30%">Start - {{ l.opened_at|date:'medium'}}</div>
+                <div style="width:30%">End - {{ l.closed_at|date:'medium'}}</div>
+            </div>
+            <div class="flex-con">
+                <div style="width:10%">
+                    <a href="https://alerts.newrelic.com/accounts/1520378/incidents/{{l.links.incident_id}}/violations" target="_new"> {{l.links.incident_id }}</a> 
+                </div>
+                <div style="width: 50%;border-right:1px solid green">{{ l.label}}</div>
+                <div style="width:35%">{{ l.condition_name }}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+     <!--  --------------------   -->
+     <div class="card" style="height:200px;max-height:200px;">
+        <div class="card-header">
+            <div  class="flex-con small_dsp">
+                <div>Log Viewer</div>    
+                <button>Last 25</button>
+                <button>Last 100</button>
+                
+
+            </div>
+        </div>
+        <div class="card-body " style="max-height:500px;overflow-y:auto;overflow-x:auto">
+            <div *ngFor='let m of display'>
+               <div  class="flex-con small_dsp">
+               <div style="width:8%">{{m.username }} </div>
+               <div style="width:23%">{{m.time }} </div> 
+               <div style="width:20%">{{ m.status }}</div> 
+               <div style="width:38%">{{ m.name }}</div> 
+               <div style="width:9%">{{ m.action }}</div> 
+            </div>
+        </div>
+    </div>
+    <!--  --------------------   -->
+   

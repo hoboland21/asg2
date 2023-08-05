@@ -1,0 +1,16 @@
+
+     <div class="card" >
+        <div class="card-header">
+            <span style="font-family:nova;margin-right:1em"> Search</span> 
+            <input #qbox (keyup)="searchQ(qbox.value)"> 
+            <span (click)="foundList=[];qbox.value='' " style=" margin-left:1em; cursor:pointer">X</span>
+        </div>
+        
+        <div  class="card-body " style="max-height:500px;overflow-y:auto">
+            <div *ngFor='let m of foundList' class="small_dsp">
+               {{ m.tcname }} - {{ m.name }} 
+            </div>
+
+        </div>
+    </div>
+   
