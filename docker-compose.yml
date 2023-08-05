@@ -7,7 +7,6 @@ services:
       context: angular
     volumes:
       - ./project_data:/usr/src/app/
-
     ports:
       - "9000:4200"
     entrypoint:

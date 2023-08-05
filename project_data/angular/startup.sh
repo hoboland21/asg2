@@ -1,5 +1,5 @@
 
-if [ ! -d asg2 ] ; then 
+if [ ! -d asg ] ; then 
 ng new asg --routing --defaults=true
 fi
 cd asg
