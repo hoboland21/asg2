@@ -89,20 +89,20 @@ export class TcviewComponent implements OnInit {
   //-----------------------
   refreshCmd() {
   //-----------------------
-    // this.actionVar = { type:'CMD',action:"REFRESH",id:0 , name:''};
+    this.actionVar = { type:'CMD',action:"REFRESH",id:0 , name:''};
     this.refreshing = true
     this.tcService.postTCmd(this.actionVar)
     .subscribe( 
       data =>  {
             
-    //        data.status = "CMD Complete"
-    //        this.message(data);
+            data.status = "CMD Complete"
+            this.message(data);
             this.refreshing = false
             this.refreshFlag = !this.refreshFlag
         }
     )
- //   this.actionVar.status = "CMD Sent"
- //   this.message(this.actionVar)
+    this.actionVar.status = "CMD Sent"
+    this.message(this.actionVar)
   }
 
   //-----------------------
