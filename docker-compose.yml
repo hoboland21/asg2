@@ -2,6 +2,36 @@ version: '3'
 
 services:
 #-------------------------------------
+  mysql:
+    build:
+      context: mysql
+    volumes:
+      - asg-django-db:/var/lib/mysql
+      - ./project_data:/usr/src/app/
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: mariadb
+    networks:
+      asgnet:
+        ipv4_address: 172.10.3.2
+#-------------------------------------
+  django:
+    build:
+      context: django 
+    volumes:
+      - ./project_data:/usr/src/app/
+    ports:
+      - "4200:4200"
+    depends_on:
+      - mysql
+    entrypoint:
+      - /bin/sh
+      - /usr/src/app/django/startup.sh
+    networks:
+      asgnet:
+        ipv4_address: 172.10.3.3
+#-------------------------------------
   angular:
     build:
       context: angular
@@ -15,9 +45,26 @@ services:
     networks:
       asgnet:
         ipv4_address: 172.10.3.4
+#-------------------------------------
+  nginx:
+    build:
+      context: nginx
+    volumes:
+      - ./project_data:/usr/src/app/
+    ports:
+      - "80:80"
+    depends_on:
+      - django
+    networks:
+      asgnet:
+        ipv4_address: 172.10.3.5
+
 
 #-------------------------------------
-
+volumes:
+  asg-django-db: 
+    external : yes    
+#-------------------------------------
 networks:
   asgnet:
     ipam:
