@@ -1,4 +1,4 @@
-FROM node:12.18-alpine AS build
+FROM node:latest AS build
 WORKDIR /usr/src/app
  
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
