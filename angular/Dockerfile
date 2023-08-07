@@ -1,4 +1,4 @@
-FROM node:18.01alpine
+FROM node:18-alpine
 
 WORKDIR /usr/src/app/angular
 RUN apk update  && \
