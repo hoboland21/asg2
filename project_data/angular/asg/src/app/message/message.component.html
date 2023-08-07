@@ -7,7 +7,7 @@
             <div *ngFor='let m of display'>
                <div  class="flex-con small_dsp">
                <div style="width:8%">{{m.username }} </div>
-               <div style="width:19%">{{m.time | date :'short' }} </div> 
+               <div style="width:19%">{{m.time | date :'yyyyMMdd HH:mm' }} </div> 
                <div style="width:12%">{{ m.action }}</div> 
                <div style="width:42%">{{ m.name }}</div> 
                <div style="width:19%">{{ m.status }}</div> 
