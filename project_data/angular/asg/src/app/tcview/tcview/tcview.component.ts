@@ -95,14 +95,14 @@ export class TcviewComponent implements OnInit {
     .subscribe( 
       data =>  {
             
-            data.status = "CMD Complete"
-            this.message(data);
+   //         data.status = "CMD Complete"
+   //         this.message(data);
             this.refreshing = false
             this.refreshFlag = !this.refreshFlag
         }
     )
-    this.actionVar.status = "CMD Sent"
-    this.message(this.actionVar)
+//    this.actionVar.status = "CMD Sent"
+//    this.message(this.actionVar)
   }
 
   //-----------------------
