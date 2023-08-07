@@ -54,7 +54,7 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - django
+      - angular
     networks:
       asgnet:
         ipv4_address: 172.10.3.5
