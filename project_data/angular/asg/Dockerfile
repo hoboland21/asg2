@@ -1,4 +1,4 @@
-FROM docker.io/node:20-alpine3.17 as build
+FROM docker.io/node/20-alpine3.17 as build
 WORKDIR /usr/src/app
  
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
