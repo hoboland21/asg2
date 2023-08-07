@@ -1,4 +1,6 @@
-FROM docker.io/node/20-alpine3.17 as build
+FROM registry.access.redhat.com/ubi8/ubi:8.1
+
+#FROM docker.io/node:20-alpine3.17 as build
 WORKDIR /usr/src/app
  
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
