@@ -116,8 +116,8 @@ export class TcviewComponent implements OnInit {
     this.tcService.postTCmd(act)
       .subscribe( 
         data =>  {
-          data.status = "CMD Rcvd"
-          this.message(data);
+//          data.status = "CMD Rcvd"
+//          this.message(data);
 //          this.refreshCmd();
         },
         error =>  {
