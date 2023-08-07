@@ -95,8 +95,7 @@ export class TcviewComponent implements OnInit {
     .subscribe( 
       data =>  {
             
-   //         data.status = "CMD Complete"
-   //         this.message(data);
+
             this.refreshing = false
             this.refreshFlag = !this.refreshFlag
         }
