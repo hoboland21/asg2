@@ -38,7 +38,7 @@ export class MessageComponent implements OnInit,OnChanges {
   ngOnInit(): void {
     this.loggingService.getLogs(this.log_count).subscribe(
       (data) => {
-        this.display = data.loglist
+        this.display = data
       }
     )
 
