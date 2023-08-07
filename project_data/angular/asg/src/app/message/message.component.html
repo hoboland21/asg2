@@ -1,12 +1,12 @@
      <!--  --------------------   -->
-     <div class="card" style="height:200px;max-height:200px;">
+     <div class="card" style="height:500px;max-height:200px;">
         <div class="card-header">
             <h4>Log Viewer</h4>    
             <div  class="flex-con small_dsp">
                 <button mat-raised-button>List my logs only</button>
             </div>
         </div>
-        <div class="card-body " style="height:500px;overflow-y:auto;overflow-x:auto">
+        <div class="card-body " style="overflow-y:auto;overflow-x:auto">
             <div *ngFor='let m of display'>
                <div  class="flex-con small_dsp">
                <div style="width:8%">{{m.username }} </div>
