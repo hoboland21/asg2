@@ -31,7 +31,6 @@ export class LoggingService {
     return this.http.post<any>(`${this.API}/postlog/`,log,httpOptions).pipe( 
       concatMap((newlog) => this.getLogs(count).pipe(
         map(loglist => {
-          console.log(loglist,newlog)
           return { loglist, newlog }
           })
         )
